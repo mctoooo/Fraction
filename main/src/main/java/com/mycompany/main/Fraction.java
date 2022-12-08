@@ -5,7 +5,6 @@
 package com.mycompany.main;
 
 /**
- *
  * @author Администратор
  */
 public class Fraction implements Cloneable {
@@ -82,9 +81,17 @@ public class Fraction implements Cloneable {
         return false;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Fraction)) return false;
+        //obj.
+
+        if (ch == ((Fraction) obj).ch && zn == ((Fraction) obj).zn)
+            return true;
+        return false;
+    }
 
     /**
-     *
      * @return @throws CloneNotSupportedException
      */
     @Override
@@ -95,6 +102,11 @@ public class Fraction implements Cloneable {
     String toFormatString() {
 
         return ch + "/" + zn;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + ch + "/" + zn + ")";
     }
 
     public static int getCountObject() {
