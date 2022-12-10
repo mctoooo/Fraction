@@ -208,8 +208,8 @@ public class Fraction implements Cloneable {
         ch = ch / nod;
         zn = zn / nod;
     }
-// метод нахождения наибольшего общего делителя
 
+    // метод нахождения наибольшего общего делителя
     public static int Nod(int chA, int znA) {
         int nod = 1;
         int a = Math.abs(chA);
@@ -217,18 +217,14 @@ public class Fraction implements Cloneable {
         if (chA == 0 || znA == 0) {
             return 1;
         }
-
         while (a != 0 && b != 0) {
             if (a > b) {
                 a = a % b;
             } else {
                 b = b % a;
             }
-
         }
-
         nod = a + b;
-        // System.out.println("Nod = " +nod);
         return nod;
     }
 }
