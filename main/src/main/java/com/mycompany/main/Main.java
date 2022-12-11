@@ -6,6 +6,7 @@
 package com.mycompany.main;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * @author Администратор
@@ -104,10 +105,10 @@ public class Main {
             drobD.setZn(2);
             System.out.println(drobF.toFormatString());
             drobD.CopyFraction(drobF);
-
-// System.out.println("Count of Objects = "+ Fraction.getCountObject());
-// System.out.println("Count of Objects = "+ Fraction.getCountObject());
-
+/*
+ //System.out.println("Count of Objects = "+ Fraction.getCountObject());
+ //System.out.println("Count of Objects = "+ Fraction.getCountObject());
+*/
             ArrayList<Fraction> arrLstF = new ArrayList<Fraction>();//Создаем объект. Вызваем коструктор по умолчанию;
             ArrayList<String> cars = new ArrayList<String>();
 
@@ -136,33 +137,61 @@ public class Main {
 
             //System.out.println(arrLstF);
 
-     // В ArrayList сохраняем множество объектов Fraction
+            // В ArrayList сохраняем множество объектов Fraction
 
             ArrayList<Fraction> arrLstFr = new ArrayList<Fraction>();
 
             for (int ix = 0; ix < 10; ix++) {
-                arrLstFr.add(new Fraction(24,135));
+                arrLstFr.add(new Fraction(24, 135));
                 arrLstFr.add(new Fraction(5 + ix + (int) (Math.random() * 12 * ix), 8 + ix + (int) (Math.random() * 13 * ix)));
-                arrLstFr.add(new Fraction(24,135));
-                arrLstFr.add(new Fraction(22,133));
-                arrLstFr.add(new Fraction(24,115));
-                arrLstFr.add(new Fraction(24,135));
+                arrLstFr.add(new Fraction(24, 135));
+                arrLstFr.add(new Fraction(22, 133));
+                arrLstFr.add(new Fraction(24, 115));
+                arrLstFr.add(new Fraction(24, 135));
             }
             System.out.println(arrLstFr);
-            int size=arrLstFr.size();
-            int LastIx=0;
-            for ( int ix =0 ; ix < size;ix++){
-                LastIx=arrLstFr.lastIndexOf(arrLstFr.get(ix));
+            int size = arrLstFr.size();
+            int LastIx ;
+            for (int ix = 0; ix < size; ix++) {
+                LastIx = arrLstFr.lastIndexOf(arrLstFr.get(ix));
 
-                    while (ix < LastIx) {
-                        arrLstFr.remove(LastIx);
-                        LastIx=arrLstFr.lastIndexOf(arrLstFr.get(ix));
+                while (ix < LastIx) {
+                    arrLstFr.remove(LastIx);
+                    LastIx = arrLstFr.lastIndexOf(arrLstFr.get(ix));
                 }
                 arrLstFr.trimToSize();
-                size= arrLstFr.size();
+                size = arrLstFr.size();
             }
+            System.out.println("arrLstFr");
             System.out.println(arrLstFr);
-            } catch (Exception e) {
+
+            LinkedList<Fraction> LinkListFr = new LinkedList<Fraction>();
+            for (int ix = 0; ix < 10; ix++) {
+                LinkListFr.addLast(new Fraction(123, 456));
+                LinkListFr.addFirst(new Fraction(12, 56));
+                LinkListFr.add(new Fraction(8 + ix + (int) (Math.random() * 34 * ix), 12 + ix + (int) (Math.random() * 52 * ix)));
+                LinkListFr.add(new Fraction(123, 456));
+                LinkListFr.add(new Fraction(13, 46));
+                LinkListFr.add(new Fraction(12, 56));
+                LinkListFr.add(new Fraction(123, 456));
+                LinkListFr.add(new Fraction(13, 46));
+            }
+            System.out.println("LinkListFr");
+            System.out.println(LinkListFr);
+            int sizeLink = LinkListFr.size();
+            int LastIxLink ;
+            for (int ix = 0; ix < size; ix++) {
+                LastIxLink = LinkListFr.lastIndexOf(LinkListFr.get(ix));
+
+                while (ix < LastIxLink) {
+                    LinkListFr.remove(LastIxLink);
+                    LastIxLink = LinkListFr.lastIndexOf(LinkListFr.get(ix));
+                }
+                size = LinkListFr.size();
+            }
+            System.out.println(LinkListFr);
+
+        } catch (Exception e) {
             System.out.println("The Error detectid " + e.getMessage());
         }
     }
